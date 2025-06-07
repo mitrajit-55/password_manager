@@ -15,7 +15,7 @@ const Manager = () => {
     useEffect(() => {
         const fetchPasswords = async () => {
             try {
-                const response = await fetch("http://localhost:3000/");
+                const response = await fetch("https://password-manager-2-8tx4.onrender.com");
                 const data = await response.json();
                 setPasswordArray(data);
             } catch (error) {
@@ -45,7 +45,7 @@ const Manager = () => {
         if (form.site.length > 3 && form.username.length > 3 && form.password.length > 3) {
             try {
                 if (isEditMode) {
-                    const res = await fetch("http://localhost:3000/", {
+                    const res = await fetch("https://password-manager-2-8tx4.onrender.com", {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json"
@@ -63,7 +63,7 @@ const Manager = () => {
                         toast.error("Failed to update password.");
                     }
                 } else {
-                    const res = await fetch("http://localhost:3000/", {
+                    const res = await fetch("https://password-manager-2-8tx4.onrender.com", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -99,7 +99,7 @@ const Manager = () => {
         if (!confirmDelete) return;
 
         try {
-            const res = await fetch("http://localhost:3000/", {
+            const res = await fetch("https://password-manager-2-8tx4.onrender.com", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
